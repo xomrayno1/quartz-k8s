@@ -6,4 +6,5 @@ B3. run file k8s <br>
 <br>
 B4. test API  <br>
 - http://x.x.x.x:32081/api/v1/customers # API GET ALL CUSTOMERS
+<br>
 - http://x.x.x.x:32081/health #api health check
