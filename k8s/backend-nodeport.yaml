@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-nodeport
+spec:
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: tcp
+      nodePort: 32081 #port phơi ra
+      port: 80
+      protocol: TCP
+      targetPort: 8080 # port container
+  selector:
+    app: backend-deployment #mapping pod
+  sessionAffinity: None
+  type: NodePort

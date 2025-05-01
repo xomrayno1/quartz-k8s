@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: backend-deployment
+  name: backend-deployment
+spec: # chi tiết triển khai
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: backend-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+        - image: tamnc1999/quartzk8s
+          imagePullPolicy: Always
+          name: backend
+          ports:
+            - containerPort: 8080 #listen to port 80
+              name: tcp
+              protocol: TCP
+          env:
+            - name: CONFIG_SERVER_DB_URL
+              value: jdbc:mysql://192.168.1.2:3308/quartzDemo
