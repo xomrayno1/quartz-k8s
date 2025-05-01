@@ -30,4 +30,4 @@ spec: # chi tiết triển khai
               protocol: TCP
           env:
             - name: CONFIG_SERVER_DB_URL
-              value: jdbc:mysql://192.168.1.2:3308/quartzDemo
+              value: jdbc:mysql://x.x.x.x:3308/quartzDemo # mysql
