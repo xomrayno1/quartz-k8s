@@ -1,4 +1,4 @@
-Build Scheduler Quartz với k8s nhìu pod chạy cùng lúc check job <br> 
+Build Scheduler Quartz với k8s nhìu pod chạy cùng lúc check job có bảo đảm tại 1 thời điểm chỉ có 1 job chạy được không <br> 
 
 B1: Điền địa chỉ mysql vào file /k8s/deployment <br>
 B2: run file quartz.script vào database quartzDemo <br>
